@@ -34,7 +34,7 @@ LayerPack generates a `config.yml` in its data folder with sensible defaults:
 ```yaml
 # LayerPack Configuration
 
-# Skip Mode - determines how PackLayer decides to skip duplicate packs
+# Skip Mode - determines how LayerPack decides to skip duplicate packs
 # Options:
 #   HASH_ONLY    - Skip if SHA-1 hash matches (default, recommended)
 #   URL_ONLY     - Skip if URL matches
@@ -44,7 +44,7 @@ LayerPack generates a `config.yml` in its data folder with sensible defaults:
 #   NEVER_SKIP   - Never skip (effectively disables plugin)
 skip-mode: HASH_ONLY
 
-# Server Filter - control which backend servers PackLayer applies to
+# Server Filter - control which backend servers LayerPack applies to
 server-filter:
   # Mode: DISABLED (all servers), WHITELIST, or BLACKLIST
   mode: DISABLED
@@ -79,11 +79,11 @@ statistics-enabled: true
 | `HASH_OR_URL` | Most aggressive. Skips if either hash or URL matches. |
 | `HASH_AND_URL` | Most conservative. Only skips if both match exactly. |
 | `ALWAYS_SKIP` | Testing/debugging only. Skips all pack sends. |
-| `NEVER_SKIP` | Effectively disables PackLayer. |
+| `NEVER_SKIP` | Effectively disables LayerPack. |
 
 ## Server Filtering
 
-You can limit PackLayer to specific backend servers:
+You can limit LayerPack to specific backend servers:
 
 ```yaml
 server-filter:
@@ -118,7 +118,7 @@ This is useful when you trust the pack source and want to minimize overhead.
 
 ## Commands
 
-All commands require the `packlayer.admin` permission.
+All commands require the `layerpack.admin` permission.
 
 | Command | Description |
 |---------|-------------|
@@ -189,7 +189,7 @@ service.clearPlayer(playerId);
 
 1. Check `debug: true` in config to see what's happening
 2. Verify all backend servers use the exact same pack (check SHA-1 hashes)
-3. Make sure PackLayer is on the **proxy**, not backend servers
+3. Make sure LayerPack is on the **proxy**, not backend servers
 
 ### Players seeing old pack version
 
